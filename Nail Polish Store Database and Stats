@@ -1,0 +1,27 @@
+--Create a nail polish store database
+
+CREATE TABLE nailpolishes (id INTEGER PRIMARY KEY, color TEXT, quantity INTEGER, price REAL, shelf INTEGER);
+
+INSERT INTO nailpolishes VALUES 
+(1, "Big Apple Red", 10, 11.11, 1),
+(2, "Maroon", 13, 7.77, 1),
+(3, "Vermillion", 4, 10.10, 1),
+(4, "Coral", 2, 8.88, 2),
+(5, "Traffic Cone", 8, 5.55, 2),
+(6, "Honey", 5, 7.77, 2),
+(7, "Grass", 7, 7.77, 3),
+(8, "Turquoise", 5, 8.88, 3),
+(9, "Aqua", 3, 8.88, 3),
+(10, "Indigo", 15, 3.33, 4),
+(11, "Lavender", 7, 7.77, 4),
+(12, "Dusk", 12, 5.55, 4),
+(13, "White Sands", 1, 10.10, 5),
+(14, "Night", 2, 11.11, 5),
+(15, "Cloudy", 7, 3.33, 5);
+
+--display the database ordered by price, low to high
+SELECT * FROM nailpolishes ORDER BY price;
+
+--show the total number of nail polishes on each shelf
+SELECT SUM(quantity) FROM nailpolishes GROUP BY shelf
+
